@@ -35,9 +35,9 @@ def remove_points_outside_convex_hull(df_points : pd.DataFrame,
     hull = ConvexHull(aru_coords)
 
     # take the df_points (which has columns x and y), and convert it to an array of shape (n, 2)
-    df_points = df_points[["x", "y"]]
+    array = df_points[["x", "y"]]
     # apply check_if_point_in_hull to each row of df_points
-    mask = df_points.apply(lambda row: check_if_point_in_hull(row.x, row.y, hull, margin, eps), axis=1)
+    mask = array.apply(lambda row: check_if_point_in_hull(row.x, row.y, hull, margin, eps), axis=1)
     return df_points[mask]
 
 for experiment in experiments:  

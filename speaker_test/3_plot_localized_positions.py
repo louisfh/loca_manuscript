@@ -13,7 +13,7 @@ ax.scatter(arus['x'], arus['y'], color='black', marker='^', label='Recorders', s
 
 # plot the localized positions as blue dots
 localized = pd.concat([pd.read_csv('./output_data/n2_t1_clustered_localizations.csv'), pd.read_csv('./output_data/n4_t1_clustered_localizations.csv')])
-ax.scatter(localized['x'], localized['y'], color='blue', label='Localized positions', s=30, alpha=0.5)
+ax.scatter(localized['x'], localized['y'], color='blue', label='Localized positions', s=40, alpha=0.5)
 
 # draw red circles of 5m around the speakers
 for _, row in speakers.iterrows():
