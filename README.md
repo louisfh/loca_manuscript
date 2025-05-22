@@ -4,4 +4,4 @@ A fully automated framework for acoustic identification localization of terrestr
 The speaker_test directory contains the code used to test the localization framework on our speaker test.
 The field_test directory contains the code used to test the localization framework in a real field experiment.
 
-Each directory has its own README
+Each directory has its own README. Please view this readme in a wide screen for correct formatting.

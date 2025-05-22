@@ -44,9 +44,11 @@ for i, sp in enumerate(species):
     df = remove_points_outside_convex_hull(df, aru_coords)
 
     # plot the heatmap of spotmap observations
+    # Note: we use a heatmap, instead of a scatter because the point observations are quite coarse
+    # The coordinates are only approximate, and subject to error. A heatmap is therefore more appropriate.
     sns.kdeplot(df.x, df.y, ax = ax[i], cmap="Reds", shade=True, alpha = 0.9, bw_method = bw_dict[sp], label = "Spotmapping \n observations")
 
-    # now add in the pipeline obs
+    # now add in the automatic localization pipeline observation
     class_name = sp + "_song"
     pipeline_df = pipeline_obs[pipeline_obs["species"] == class_name]
     # drop the points outside the convex hull of the ARU locations
@@ -62,7 +64,8 @@ for i, sp in enumerate(species):
     ax[i].tick_params(axis='x', labelsize=20)
     ax[i].tick_params(axis='y', labelsize=20)
 
-    # the xtick values are too big, instead of showing 665050, show 50, (with +665000 in the label)
+    # the xtick values are too big, rescale them relative to a reference point for ease of interpretation.
+    # e.g. (665050, 4461350) becomes (50, 50).
     xticks = ax[i].get_xticks()
     xticks = [str(int(x - 665000)) for x in xticks]
     ax[i].set_xticklabels(xticks)

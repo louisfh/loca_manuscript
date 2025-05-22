@@ -10,11 +10,11 @@ n4_t1["experiment"] = "n4_t1"
 all_localizations = pd.concat([n2_t1, n4_t1], ignore_index=True)
 
 def find_nearest_speaker(x_pos, y_pos, speaker_coords):
-    # if NaN return NaN
     """
     Returns:
         the x and y coordinates of the nearest speaker
     """
+    # if NaN return NaN. Ensures we don't try and find nearest speaker if we don't have a position.
     if np.isnan(x_pos) or np.isnan(y_pos):
         return np.array([np.nan, np.nan])
     else:
