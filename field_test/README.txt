@@ -3,9 +3,9 @@ Please view this readme in a wide screen for correct formatting.
 
 The code is structured as follows:
 
-├── inputs/
-│   ├── aru_coords.csv                              CSV with the x,y (in UTM) positions of the recorders
-│   ├── 2024-02-27_opso-0.10.1_nfwf-v3.0.model      CNN model object (Trained with Opensoundscape (v0.10.1))
+├── inputs/    
+│   ├── aru_coords.csv                              CSV with the x,y (in UTM) positions of the recorders    
+│   ├── 2024-02-27_opso-0.10.1_nfwf-v3.0.model      CNN model object (Trained with Opensoundscape (v0.10.1))   
 │   └── All_sp_spotmaps.csv                         CSV of the digitized spotmapping observations. Coordinates 
 │                                                   should be considered approximations with human error.
 │                                                     
